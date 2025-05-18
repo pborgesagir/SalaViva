@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala Viva - Clínica TEIA</title>
+
+    <link rel="icon" type="image/png" href="puzzle-favicon.png">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Fallback background */
+            color: #333;
+            position: relative; /* Needed for positioning container */
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Container for falling symbols */
+        .symbol-container {
+            position: fixed; /* Fixed position to stay in background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Behind the main content */
+            pointer-events: none; /* Allow clicks through */
+        }
+
+        /* Individual falling symbol style */
+        .falling-symbol {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0.7; /* Slightly more transparent */
+            animation: fall linear infinite;
+        }
+
+        .falling-symbol svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Falling animation keyframes */
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg); /* Fall below viewport */
+                opacity: 0;
+            }
+        }
+
+        /* Main content styling */
+        header, main, footer {
+            position: relative; /* Ensure content is above the animation */
+            z-index: 1;     /* Stacking order */
+            margin-left: 20px; /* Keep original margins */
+            margin-right: 20px;
+        }
+
+        header {
+            background-color: rgba(0, 123, 255, 0.9); /* Slightly transparent */
+            color: #fff;
+            padding: 20px;
+            text-align: center; /* Keep for fallback if flex fails */
+            border-radius: 8px;
+            margin-top: 20px; /* Adjust top margin */
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .header-logo {
+            max-height: 80px; /* Adjust this value to control logo size */
+            max-width: 90%;   /* Prevent logo spilling on small screens */
+            margin-bottom: 15px; /* Space between logo and title */
+            border-radius: 15px; /* Curves the corners */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px; /* Added margin for spacing below h2 */
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 10px; /* Add some padding */
+        }
+
+        /* Styling for lists within sections, like the new routines list */
+        section ul li {
+            margin-bottom: 8px; /* Space between list items */
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c7254e;
+        }
+
+        .device-list {
+            column-count: 2;
+            column-gap: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .device-list li {
+            background-color: #f8f9fa;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            display: inline-block;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            margin-top: 15px;
+            margin-bottom: 15px; /* Added margin for spacing */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+            background: rgba(244, 244, 244, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .device-list {
+                column-count: 1;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            section {
+                padding: 15px;
+            }
+            header, main, footer {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .header-logo {
+                max-height: 60px;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="symbol-container"></div>
+
+    <header>
+        <img src="logo.jpg" alt="Logo da Clínica" class="header-logo">
+        <h1>Sala Viva</h1>
+    </header>
+
+    <main>
+        <section id="objetivo-geral">
+            <h2>1. Objetivo Geral</h2>
+            <p>Promover o desenvolvimento da autonomia e da funcionalidade de pessoas com Transtorno do Espectro Autista (TEA) e outras deficiências por meio de atividades práticas nos ambientes de sala, quarto e cozinha, incentivando a independência nas rotinas diárias e a generalização dessas habilidades para o ambiente familiar e social. [cite: 10]</p>
+        </section>
+
+        <section id="objetivos-especificos">
+            <h2>2. Objetivos Específicos</h2>
+            <ul>
+                <li>Estimular a autonomia nas rotinas básicas de higiene, alimentação e organização pessoal. [cite: 11]</li>
+                <li>Desenvolver habilidades motoras finas e globais necessárias às tarefas do dia a dia. [cite: 12]</li>
+                <li>Promover a noção de sequência, tempo e organização para execução de atividades funcionais. [cite: 13]</li>
+                <li>Incentivar o reconhecimento e uso adequado de objetos e utensílios domésticos. [cite: 14]</li>
+                <li>Trabalhar a comunicação funcional (verbal ou alternativa) durante as atividades. [cite: 15]</li>
+                <li>Estimular a iniciativa, o senso de responsabilidade e a participação ativa nas tarefas do lar. [cite: 16]</li>
+                <li>Promover a autorregulação emocional diante de tarefas desafiadoras ou novas. [cite: 17]</li>
+            </ul>
+        </section>
+
+        <section id="ambientes-recursos">
+            <h2>3. Ambientes e Recursos Utilizados</h2>
+            <h3>Ambiente da sala:</h3>
+            <p>A sala é utilizada como espaço de convivência e organização, onde se pode trabalhar comportamentos sociais, regras básicas de convivência e atividades funcionais de rotina. [cite: 18]</p>
+            <h4>Objetivos Terapêuticos:</h4>
+            <ul>
+                <li>Comunicação funcional: nomear objetos, expressar preferências (escolha de brinquedos, programas, músicas) com ou sem fala. [cite: 19]</li>
+                <li>Organização e categorização: guardar brinquedos, identificar objetos da sala, classificar por cor ou função. [cite: 20]</li>
+                <li>Interação social: promover o compartilhamento de espaços e turnos durante jogos ou brincadeiras. [cite: 21]</li>
+                <li>Comportamento adaptativo: sentar-se adequadamente, esperar sua vez, responder a comandos simples. [cite: 22]</li>
+                <li>Sequência de ações: ligar a televisão, escolher um canal ou filme, desligar ao término. [cite: 23]</li>
+                <li>Planejamento motor e coordenação: manipular controles, livros ou jogos de forma coordenada. [cite: 24]</li>
+            </ul>
+            <h3>Ambiente do quarto:</h3>
+            <p>O quarto representa o espaço íntimo e pessoal, ideal para desenvolver noções de autocuidado, rotina e independência nas tarefas de vestir, descansar e manter o ambiente organizado. [cite: 25]</p>
+            <h4>Objetivos Terapêuticos:</h4>
+            <ul>
+                <li>Autonomia no vestir e despir: reconhecer partes do corpo, identificar roupas, praticar a sequência de se vestir e despir. [cite: 26]</li>
+                <li>Higiene pessoal: orientar o uso de pijama, escovação antes de dormir (pode ser simbolicamente incluída), lavar as mãos ao acordar, etc. [cite: 27]</li>
+                <li>Organização pessoal: dobrar roupas, guardar em locais adequados, escolher roupas com base no clima. [cite: 27]</li>
+                <li>Rotina do sono: identificar horário de dormir, apagar a luz, deitar, praticar ações calmantes antes de dormir (atividade sensorial ou relaxante). [cite: 28]</li>
+                <li>Planejamento e sequência: arrumar a cama, guardar pertences, escolher roupas do dia seguinte. [cite: 29]</li>
+                <li>Estimulação da independência: realizar tarefas com mínima ajuda, utilizando pistas visuais quando necessário. [cite: 30]</li>
+            </ul>
+            <h3>Ambiente da cozinha:</h3>
+            <p>A cozinha é um ambiente rico em estímulos e oportunidades para o desenvolvimento da autonomia alimentar, percepção sensorial, segurança e respeito por regras sociais. [cite: 31]</p>
+            <h4>Objetivos Terapêuticos:</h4>
+            <ul>
+                <li>Autonomia alimentar: abrir embalagens simples, passar manteiga no pão, preparar lanches básicos, usar utensílios com segurança. [cite: 32]</li>
+                <li>Higiene: lavar as mãos antes e depois das refeições, limpar a mesa, reconhecer o uso do pano ou guardanapo. [cite: 33]</li>
+                <li>Segurança e funcionalidade: reconhecer objetos perigosos (faca, fogão), seguir instruções de segurança, aprender a pedir ajuda. [cite: 34]</li>
+                <li>Habilidades motoras finas e coordenação visomotora: usar talheres, copos, despejar líquidos, manipular alimentos. [cite: 35]</li>
+                <li>Sequência funcional: seguir passos para preparar um lanche (ex: 1. pegar o prato, 2. abrir o pão, 3. passar o recheio, 4. comer). [cite: 36]</li>
+                <li>Comportamento à mesa: sentar corretamente, pedir alimentos, esperar sua vez, manter o ambiente limpo. [cite: 37]</li>
+                <li>Ampliação do repertório alimentar (se aplicável): tolerar diferentes texturas, cores, cheiros e sabores durante o manuseio dos alimentos. [cite: 38]</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Tutorial criado para a equipe da Clínica. Bom trabalho!</p>
+        <p id="current-date"></p>
+    </footer>
+
+    <script>
+        const symbolContainer = document.querySelector('.symbol-container');
+        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3']; // Rainbow colors
+
+        const svgCircle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+        const svgSquare = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="90" fill="${color}" stroke="#fff" stroke-width="3" rx="5" ry="5"/></svg>`;
+        const svgTriangle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,95 5,95" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+
+        const shapes = [svgCircle, svgSquare, svgTriangle];
+        const numberOfSymbols = 70; // Adjusted for potentially better performance/look
+
+        for (let i = 0; i < numberOfSymbols; i++) {
+            const symbol = document.createElement('div');
+            symbol.classList.add('falling-symbol');
+            symbol.style.left = Math.random() * 100 + 'vw'; // Spread across viewport width
+            symbol.style.animationDuration = Math.random() * 5 + 6 + 's'; // Duration between 6s and 11s
+            symbol.style.animationDelay = Math.random() * 6 + 's'; // Delay up to 6s
+
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            const randomShapeFunction = shapes[Math.floor(Math.random() * shapes.length)];
+            symbol.innerHTML = randomShapeFunction(randomColor);
+
+            symbolContainer.appendChild(symbol);
+        }
+
+        // Update date in footer
+        const updateDate = () => {
+            const dateElement = document.getElementById('current-date');
+            if (dateElement) {
+                const now = new Date();
+                // Formatting for Brazil (pt-BR) and São Paulo timezone
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Sao_Paulo' };
+                dateElement.textContent = `Data atual: ${now.toLocaleDateString('pt-BR', options)}`;
+            }
+        };
+        updateDate(); // Call the function to set the date
+
+    </script>
+
+</body>
+</html>
