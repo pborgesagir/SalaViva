@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sala Viva - Clínica TEIA</title>
+
     <link rel="icon" type="image/png" href="puzzle-favicon.png">
 
     <style>
@@ -106,11 +107,6 @@
             margin-bottom: 15px;
         }
 
-        h3, h4 {
-            margin-top: 15px;
-            color: #444;
-        }
-
         ul {
             list-style: disc;
             margin-left: 20px;
@@ -119,6 +115,14 @@
 
         section ul li {
             margin-bottom: 8px;
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c7254e;
         }
 
         .device-list {
@@ -183,103 +187,99 @@
 </head>
 <body>
 
-    <div class="symbol-container"></div>
+<div class="symbol-container"></div>
 
-    <header>
-        <img src="logo.jpg" alt="Logo da Clínica" class="header-logo">
-        <h1>Sala Viva</h1>
-    </header>
+<header>
+    <img src="logo.jpg" alt="Logo da Clínica" class="header-logo">
+    <h1>Sala Viva</h1>
+</header>
 
-    <main>
-        <section>
-            <h2>1. Objetivo Geral</h2>
-            <p>Promover o desenvolvimento da autonomia e da funcionalidade de pessoas com Transtorno do Espectro Autista (TEA) e outras deficiências por meio de atividades práticas nos ambientes de sala, quarto e cozinha, incentivando a independência nas rotinas diárias e a generalização dessas habilidades para o ambiente familiar e social.</p>
-        </section>
+<main>
+    <section id="objetivo-geral">
+        <h2>1. Objetivo Geral</h2>
+        <p>Promover o desenvolvimento da autonomia e da funcionalidade de pessoas com Transtorno do Espectro Autista (TEA) e outras deficiências por meio de atividades práticas nos ambientes de sala, quarto e cozinha, incentivando a independência nas rotinas diárias e a generalização dessas habilidades para o ambiente familiar e social.</p>
+    </section>
 
-        <section>
-            <h2>2. Objetivos Específicos</h2>
-            <ul>
-                <li>Estimular a autonomia nas rotinas básicas de higiene, alimentação e organização pessoal.</li>
-                <li>Desenvolver habilidades motoras finas e globais necessárias às tarefas do dia a dia.</li>
-                <li>Promover a noção de sequência, tempo e organização para execução de atividades funcionais.</li>
-                <li>Incentivar o reconhecimento e uso adequado de objetos e utensílios domésticos.</li>
-                <li>Trabalhar a comunicação funcional (verbal ou alternativa) durante as atividades.</li>
-                <li>Estimular a iniciativa, o senso de responsabilidade e a participação ativa nas tarefas do lar.</li>
-                <li>Promover a autorregulação emocional diante de tarefas desafiadoras ou novas.</li>
-            </ul>
-        </section>
+    <section id="objetivos-especificos">
+        <h2>2. Objetivos Específicos</h2>
+        <ul>
+            <li>Estimular a autonomia nas rotinas básicas de higiene, alimentação e organização pessoal.</li>
+            <li>Desenvolver habilidades motoras finas e globais necessárias às tarefas do dia a dia.</li>
+            <li>Promover a noção de sequência, tempo e organização para execução de atividades funcionais.</li>
+            <li>Incentivar o reconhecimento e uso adequado de objetos e utensílios domésticos.</li>
+            <li>Trabalhar a comunicação funcional (verbal ou alternativa) durante as atividades.</li>
+            <li>Estimular a iniciativa, o senso de responsabilidade e a participação ativa nas tarefas do lar.</li>
+            <li>Promover a autorregulação emocional diante de tarefas desafiadoras ou novas.</li>
+        </ul>
+    </section>
 
-        <section>
-            <h2>3. Ambientes e Recursos Utilizados</h2>
+    <section id="ambientes-recursos">
+        <h2>3. Ambientes e Recursos Utilizados</h2>
 
-            <h3>Ambiente da sala:</h3>
-            <p>A sala é utilizada como espaço de convivência e organização, onde se pode trabalhar comportamentos sociais, regras básicas de convivência e atividades funcionais de rotina.</p>
-            <h4>Objetivos Terapêuticos:</h4>
-            <ul>
-                <li>Comunicação funcional: nomear objetos, expressar preferências com ou sem fala.</li>
-                <li>Organização e categorização: guardar brinquedos, classificar por cor ou função.</li>
-                <li>Interação social: promover o compartilhamento de espaços e turnos durante brincadeiras.</li>
-                <li>Comportamento adaptativo: sentar-se adequadamente, esperar sua vez, responder a comandos simples.</li>
-                <li>Sequência de ações: ligar e desligar aparelhos após o uso.</li>
-                <li>Planejamento motor e coordenação: manipular objetos de forma coordenada.</li>
-            </ul>
+        <h3>Ambiente da sala:</h3>
+        <p>A sala é utilizada como espaço de convivência e organização, onde se pode trabalhar comportamentos sociais, regras básicas de convivência e atividades funcionais de rotina.</p>
+        <h4>Objetivos Terapêuticos:</h4>
+        <ul>
+            <li>Comunicação funcional: nomear objetos, expressar preferências com ou sem fala.</li>
+            <li>Organização e categorização: guardar brinquedos, identificar objetos da sala, classificar por cor ou função.</li>
+            <li>Interação social: promover o compartilhamento de espaços e turnos durante jogos ou brincadeiras.</li>
+            <li>Comportamento adaptativo: sentar-se adequadamente, esperar sua vez, responder a comandos simples.</li>
+            <li>Sequência de ações: ligar a televisão, escolher um canal ou filme, desligar ao término.</li>
+            <li>Planejamento motor e coordenação: manipular controles, livros ou jogos de forma coordenada.</li>
+        </ul>
 
-            <h3>Ambiente do quarto:</h3>
-            <p>O quarto representa o espaço íntimo e pessoal, ideal para desenvolver noções de autocuidado, rotina e independência nas tarefas de vestir, descansar e manter o ambiente organizado.</p>
-            <h4>Objetivos Terapêuticos:</h4>
-            <ul>
-                <li>Autonomia no vestir e despir: reconhecer roupas e praticar a sequência adequada.</li>
-                <li>Higiene pessoal: escovação, lavar as mãos ao acordar, uso do pijama.</li>
-                <li>Organização pessoal: dobrar roupas, guardar, escolher roupas conforme o clima.</li>
-                <li>Rotina do sono: identificar horário de dormir, apagar luzes, relaxar.</li>
-                <li>Planejamento e sequência: arrumar a cama, escolher roupas do dia seguinte.</li>
-                <li>Estimulação da independência: realizar tarefas com mínima ajuda.</li>
-            </ul>
+        <h3>Ambiente do quarto:</h3>
+        <p>O quarto representa o espaço íntimo e pessoal, ideal para desenvolver noções de autocuidado, rotina e independência nas tarefas de vestir, descansar e manter o ambiente organizado.</p>
+        <h4>Objetivos Terapêuticos:</h4>
+        <ul>
+            <li>Autonomia no vestir e despir: reconhecer partes do corpo, identificar roupas, praticar a sequência de se vestir e despir.</li>
+            <li>Higiene pessoal: orientar o uso de pijama, escovação antes de dormir, lavar as mãos ao acordar.</li>
+            <li>Organização pessoal: dobrar roupas, guardar em locais adequados, escolher roupas com base no clima.</li>
+            <li>Rotina do sono: identificar horário de dormir, apagar a luz, deitar, praticar ações calmantes antes de dormir.</li>
+            <li>Planejamento e sequência: arrumar a cama, guardar pertences, escolher roupas do dia seguinte.</li>
+            <li>Estimulação da independência: realizar tarefas com mínima ajuda, utilizando pistas visuais quando necessário.</li>
+        </ul>
 
-            <h3>Ambiente da cozinha:</h3>
-            <p>A cozinha é um ambiente rico em estímulos e oportunidades para o desenvolvimento da autonomia alimentar, percepção sensorial e segurança.</p>
-            <h4>Objetivos Terapêuticos:</h4>
-            <ul>
-                <li>Autonomia alimentar: preparar lanches simples e usar utensílios com segurança.</li>
-                <li>Higiene: lavar as mãos, limpar a mesa, usar guardanapo.</li>
-                <li>Segurança e funcionalidade: reconhecer objetos perigosos, seguir instruções.</li>
-                <li>Habilidades motoras finas: usar talheres, copos e manipular alimentos.</li>
-                <li>Sequência funcional: seguir passos para preparar um lanche.</li>
-                <li>Comportamento à mesa: sentar corretamente, pedir, manter o ambiente limpo.</li>
-                <li>Ampliação do repertório alimentar: tolerar diferentes texturas e sabores.</li>
-            </ul>
-        </section>
-    </main>
+        <h3>Ambiente da cozinha:</h3>
+        <p>A cozinha é um ambiente rico em estímulos e oportunidades para o desenvolvimento da autonomia alimentar, percepção sensorial, segurança e respeito por regras sociais.</p>
+        <h4>Objetivos Terapêuticos:</h4>
+        <ul>
+            <li>Autonomia alimentar: abrir embalagens simples, passar manteiga no pão, preparar lanches básicos.</li>
+            <li>Higiene: lavar as mãos antes e depois das refeições, limpar a mesa, reconhecer o uso do pano ou guardanapo.</li>
+            <li>Segurança e funcionalidade: reconhecer objetos perigosos, seguir instruções de segurança, aprender a pedir ajuda.</li>
+            <li>Habilidades motoras finas e coordenação visomotora: usar talheres, copos, despejar líquidos, manipular alimentos.</li>
+            <li>Sequência funcional: seguir passos para preparar um lanche.</li>
+            <li>Comportamento à mesa: sentar corretamente, pedir alimentos, esperar sua vez, manter o ambiente limpo.</li>
+            <li>Ampliação do repertório alimentar: tolerar diferentes texturas, cores, cheiros e sabores durante o manuseio dos alimentos.</li>
+        </ul>
+    </section>
+</main>
 
-    <footer>
-        <p>Documento criado pela equipe técnica TEIA e DCOL Agir<br>© 2025 Todos os direitos reservados.</p>
-    </footer>
+<footer>
+    <p>Documento criado pela equipe técnica TEIA e DCOL Agir<br>© 2025 Todos os direitos reservados.</p>
+</footer>
 
-    <script>
-        const symbolContainer = document.querySelector('.symbol-container');
-        const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+<script>
+    const symbolContainer = document.querySelector('.symbol-container');
+    const colors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+    const svgCircle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+    const svgSquare = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="90" fill="${color}" stroke="#fff" stroke-width="3" rx="5" ry="5"/></svg>`;
+    const svgTriangle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,95 5,95" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
+    const shapes = [svgCircle, svgSquare, svgTriangle];
+    const numberOfSymbols = 70;
 
-        const svgCircle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
-        const svgSquare = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="90" fill="${color}" stroke="#fff" stroke-width="3" rx="5" ry="5"/></svg>`;
-        const svgTriangle = (color) => `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,5 95,95 5,95" fill="${color}" stroke="#fff" stroke-width="3"/></svg>`;
-
-        const shapes = [svgCircle, svgSquare, svgTriangle];
-        const numberOfSymbols = 70;
-
-        for (let i = 0; i < numberOfSymbols; i++) {
-            const symbol = document.createElement('div');
-            symbol.classList.add('falling-symbol');
-            symbol.style.left = Math.random() * 100 + 'vw';
-            symbol.style.animationDuration = Math.random() * 5 + 6 + 's';
-            symbol.style.animationDelay = Math.random() * 6 + 's';
-
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            const randomShapeFunction = shapes[Math.floor(Math.random() * shapes.length)];
-            symbol.innerHTML = randomShapeFunction(randomColor);
-
-            symbolContainer.appendChild(symbol);
-        }
-    </script>
+    for (let i = 0; i < numberOfSymbols; i++) {
+        const symbol = document.createElement('div');
+        symbol.classList.add('falling-symbol');
+        symbol.style.left = Math.random() * 100 + 'vw';
+        symbol.style.animationDuration = Math.random() * 5 + 6 + 's';
+        symbol.style.animationDelay = Math.random() * 6 + 's';
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        const randomShapeFunction = shapes[Math.floor(Math.random() * shapes.length)];
+        symbol.innerHTML = randomShapeFunction(randomColor);
+        symbolContainer.appendChild(symbol);
+    }
+</script>
 
 </body>
 </html>
